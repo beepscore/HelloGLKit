@@ -18,6 +18,9 @@
 		DE30F871154670C3008DBF63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE30F858154670C2008DBF63 /* Foundation.framework */; };
 		DE30F879154670C3008DBF63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE30F877154670C3008DBF63 /* InfoPlist.strings */; };
 		DE30F87C154670C3008DBF63 /* HelloGLKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE30F87B154670C3008DBF63 /* HelloGLKitTests.m */; };
+		DE3EEDA7154677CA008FE903 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA6154677CA008FE903 /* QuartzCore.framework */; };
+		DE3EEDAA154677DD008FE903 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA9154677DD008FE903 /* OpenGLES.framework */; };
+		DE3EEDAC154677F0008FE903 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDAB154677F0008FE903 /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		DE30F878154670C3008DBF63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE30F87A154670C3008DBF63 /* HelloGLKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloGLKitTests.h; sourceTree = "<group>"; };
 		DE30F87B154670C3008DBF63 /* HelloGLKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloGLKitTests.m; sourceTree = "<group>"; };
+		DE3EEDA6154677CA008FE903 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DE3EEDA9154677DD008FE903 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DE3EEDAB154677F0008FE903 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3EEDAC154677F0008FE903 /* GLKit.framework in Frameworks */,
+				DE3EEDAA154677DD008FE903 /* OpenGLES.framework in Frameworks */,
+				DE3EEDA7154677CA008FE903 /* QuartzCore.framework in Frameworks */,
 				DE30F857154670C2008DBF63 /* UIKit.framework in Frameworks */,
 				DE30F859154670C2008DBF63 /* Foundation.framework in Frameworks */,
 				DE30F85B154670C2008DBF63 /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +85,9 @@
 		DE30F847154670C2008DBF63 = {
 			isa = PBXGroup;
 			children = (
+				DE3EEDAB154677F0008FE903 /* GLKit.framework */,
+				DE3EEDA9154677DD008FE903 /* OpenGLES.framework */,
+				DE3EEDA6154677CA008FE903 /* QuartzCore.framework */,
 				DE30F85C154670C2008DBF63 /* HelloGLKit */,
 				DE30F874154670C3008DBF63 /* HelloGLKitTests */,
 				DE30F855154670C2008DBF63 /* Frameworks */,
@@ -412,6 +424,7 @@
 				DE30F881154670C3008DBF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE30F882154670C3008DBF63 /* Build configuration list for PBXNativeTarget "HelloGLKitTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				DE30F884154670C3008DBF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
