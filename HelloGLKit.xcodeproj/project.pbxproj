@@ -35,17 +35,17 @@
 		DE30F856154670C2008DBF63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE30F858154670C2008DBF63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE30F85A154670C2008DBF63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DE30F85E154670C3008DBF63 /* HelloGLKit-Info.plist */ = {isa = PBXFileReference; path = "HelloGLKit-Info.plist"; sourceTree = "<group>"; };
+		DE30F85E154670C3008DBF63 /* HelloGLKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloGLKit-Info.plist"; sourceTree = "<group>"; };
 		DE30F860154670C3008DBF63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE30F862154670C3008DBF63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DE30F864154670C3008DBF63 /* HelloGLKit-Prefix.pch */ = {isa = PBXFileReference; path = "HelloGLKit-Prefix.pch"; sourceTree = "<group>"; };
-		DE30F865154670C3008DBF63 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE30F864154670C3008DBF63 /* HelloGLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloGLKit-Prefix.pch"; sourceTree = "<group>"; };
+		DE30F865154670C3008DBF63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE30F866154670C3008DBF63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE30F86D154670C3008DBF63 /* HelloGLKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloGLKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE30F86E154670C3008DBF63 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DE30F876154670C3008DBF63 /* HelloGLKitTests-Info.plist */ = {isa = PBXFileReference; path = "HelloGLKitTests-Info.plist"; sourceTree = "<group>"; };
+		DE30F876154670C3008DBF63 /* HelloGLKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloGLKitTests-Info.plist"; sourceTree = "<group>"; };
 		DE30F878154670C3008DBF63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DE30F87A154670C3008DBF63 /* HelloGLKitTests.h */ = {isa = PBXFileReference; path = HelloGLKitTests.h; sourceTree = "<group>"; };
+		DE30F87A154670C3008DBF63 /* HelloGLKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloGLKitTests.h; sourceTree = "<group>"; };
 		DE30F87B154670C3008DBF63 /* HelloGLKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloGLKitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
