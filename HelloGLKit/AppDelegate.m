@@ -7,21 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    float curRed;
+    BOOL increasing;
+}
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application 
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    increasing = YES;
+    curRed = 0.0;
     
     EAGLContext * context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2]; // 1
     GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; // 2
     view.context = context; // 3
     view.delegate = self; // 4
-    [self.window addSubview:view]; // 5    
+    
+    [self.window addSubview:view]; // 5
+    
+    view.enableSetNeedsDisplay = NO;
+    CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -59,9 +72,28 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
-    glClearColor(1.0, 0.0, 0.0, 1.0);
+    if (increasing) {
+        curRed += 0.01;
+    } else {
+        curRed -= 0.01;
+    }
+    if (curRed >= 1.0) {
+        curRed = 1.0;
+        increasing = NO;
+    }
+    if (curRed <= 0.0) {
+        curRed = 0.0;
+        increasing = YES;
+    }
+    
+    glClearColor(curRed, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
+}
+
+- (void)render:(CADisplayLink*)displayLink {
+    GLKView * view = [self.window.subviews objectAtIndex:0];
+    [view display];
 }
 
 @end
