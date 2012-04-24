@@ -85,9 +85,6 @@
 		DE30F847154670C2008DBF63 = {
 			isa = PBXGroup;
 			children = (
-				DE3EEDAB154677F0008FE903 /* GLKit.framework */,
-				DE3EEDA9154677DD008FE903 /* OpenGLES.framework */,
-				DE3EEDA6154677CA008FE903 /* QuartzCore.framework */,
 				DE30F85C154670C2008DBF63 /* HelloGLKit */,
 				DE30F874154670C3008DBF63 /* HelloGLKitTests */,
 				DE30F855154670C2008DBF63 /* Frameworks */,
@@ -111,6 +108,9 @@
 				DE30F858154670C2008DBF63 /* Foundation.framework */,
 				DE30F85A154670C2008DBF63 /* CoreGraphics.framework */,
 				DE30F86E154670C3008DBF63 /* SenTestingKit.framework */,
+				DE3EEDAB154677F0008FE903 /* GLKit.framework */,
+				DE3EEDA9154677DD008FE903 /* OpenGLES.framework */,
+				DE3EEDA6154677CA008FE903 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
