@@ -20,21 +20,20 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    EAGLContext * context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    view.context = context;
+    view.delegate = self;
     
     increasing = YES;
     curRed = 0.0;
     
-    EAGLContext * context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2]; // 1
-    GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; // 2
-    view.context = context; // 3
-    view.delegate = self; // 4
-    
-    [self.window addSubview:view]; // 5
-    
-    view.enableSetNeedsDisplay = NO;
-    CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    GLKViewController * viewController = [[GLKViewController alloc] initWithNibName:nil bundle:nil]; // 1
+    viewController.view = view; // 2
+    viewController.delegate = self; // 3
+    viewController.preferredFramesPerSecond = 60; // 4
+    self.window.rootViewController = viewController; // 5
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
