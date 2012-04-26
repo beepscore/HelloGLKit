@@ -71,10 +71,18 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
+    glClearColor(curRed, 0.0, 0.0, 1.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
+
+#pragma mark - GLKViewControllerDelegate
+
+- (void)glkViewControllerUpdate:(GLKViewController *)controller {
     if (increasing) {
-        curRed += 0.01;
+        curRed += 1.0 * controller.timeSinceLastUpdate;
     } else {
-        curRed -= 0.01;
+        curRed -= 1.0 * controller.timeSinceLastUpdate;
     }
     if (curRed >= 1.0) {
         curRed = 1.0;
@@ -84,11 +92,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         curRed = 0.0;
         increasing = YES;
     }
-    
-    glClearColor(curRed, 0.0, 0.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
 }
+
 
 - (void)render:(CADisplayLink*)displayLink {
     GLKView * view = [self.window.subviews objectAtIndex:0];
