@@ -21,6 +21,8 @@
 		DE3EEDA7154677CA008FE903 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA6154677CA008FE903 /* QuartzCore.framework */; };
 		DE3EEDAA154677DD008FE903 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA9154677DD008FE903 /* OpenGLES.framework */; };
 		DE3EEDAC154677F0008FE903 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDAB154677F0008FE903 /* GLKit.framework */; };
+		DE9792D21549056200062700 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE9792D11549056200062700 /* README.md */; };
+		DE9792D31549056200062700 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE9792D11549056200062700 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		DE3EEDA6154677CA008FE903 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE3EEDA9154677DD008FE903 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DE3EEDAB154677F0008FE903 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		DE9792D11549056200062700 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		DE30F847154670C2008DBF63 = {
 			isa = PBXGroup;
 			children = (
+				DE9792D11549056200062700 /* README.md */,
 				DE30F85C154670C2008DBF63 /* HelloGLKit */,
 				DE30F874154670C3008DBF63 /* HelloGLKitTests */,
 				DE30F855154670C2008DBF63 /* Frameworks */,
@@ -227,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE30F861154670C3008DBF63 /* InfoPlist.strings in Resources */,
+				DE9792D21549056200062700 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE30F879154670C3008DBF63 /* InfoPlist.strings in Resources */,
+				DE9792D31549056200062700 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
