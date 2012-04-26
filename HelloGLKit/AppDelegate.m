@@ -10,8 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation AppDelegate {
-    float curRed;
-    BOOL increasing;
 }
 
 @synthesize window = _window;
@@ -19,24 +17,6 @@
 - (BOOL)application:(UIApplication *)application 
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    EAGLContext * context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    view.context = context;
-    view.delegate = self;
-    
-    increasing = YES;
-    curRed = 0.0;
-    
-    GLKViewController * viewController = [[GLKViewController alloc] initWithNibName:nil bundle:nil]; // 1
-    viewController.view = view; // 2
-    viewController.delegate = self; // 3
-    viewController.preferredFramesPerSecond = 60; // 4
-    self.window.rootViewController = viewController; // 5
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -65,39 +45,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark - GLKViewDelegate
-
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    
-    glClearColor(curRed, 0.0, 0.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-}
-
-
-#pragma mark - GLKViewControllerDelegate
-
-- (void)glkViewControllerUpdate:(GLKViewController *)controller {
-    if (increasing) {
-        curRed += 1.0 * controller.timeSinceLastUpdate;
-    } else {
-        curRed -= 1.0 * controller.timeSinceLastUpdate;
-    }
-    if (curRed >= 1.0) {
-        curRed = 1.0;
-        increasing = NO;
-    }
-    if (curRed <= 0.0) {
-        curRed = 0.0;
-        increasing = YES;
-    }
-}
-
-
-- (void)render:(CADisplayLink*)displayLink {
-    GLKView * view = [self.window.subviews objectAtIndex:0];
-    [view display];
 }
 
 @end
