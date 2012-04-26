@@ -93,4 +93,10 @@
     }
 }
 
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // toggle paused. This stops calls to update and draw
+    self.paused = !self.paused;
+}
+
 @end
