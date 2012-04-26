@@ -18,6 +18,7 @@
 		DE30F871154670C3008DBF63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE30F858154670C2008DBF63 /* Foundation.framework */; };
 		DE30F879154670C3008DBF63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE30F877154670C3008DBF63 /* InfoPlist.strings */; };
 		DE30F87C154670C3008DBF63 /* HelloGLKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE30F87B154670C3008DBF63 /* HelloGLKitTests.m */; };
+		DE3B2659154914A000620B23 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3B2658154914A000620B23 /* MainStoryboard.storyboard */; };
 		DE3EEDA7154677CA008FE903 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA6154677CA008FE903 /* QuartzCore.framework */; };
 		DE3EEDAA154677DD008FE903 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDA9154677DD008FE903 /* OpenGLES.framework */; };
 		DE3EEDAC154677F0008FE903 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3EEDAB154677F0008FE903 /* GLKit.framework */; };
@@ -53,6 +54,7 @@
 		DE30F878154670C3008DBF63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE30F87A154670C3008DBF63 /* HelloGLKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloGLKitTests.h; sourceTree = "<group>"; };
 		DE30F87B154670C3008DBF63 /* HelloGLKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloGLKitTests.m; sourceTree = "<group>"; };
+		DE3B2658154914A000620B23 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DE3EEDA6154677CA008FE903 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE3EEDA9154677DD008FE903 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DE3EEDAB154677F0008FE903 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +132,7 @@
 				DE30F866154670C3008DBF63 /* AppDelegate.m */,
 				DE73B30A15490FDD00546E00 /* HelloGLKitViewController.h */,
 				DE73B30B15490FDD00546E00 /* HelloGLKitViewController.m */,
+				DE3B2658154914A000620B23 /* MainStoryboard.storyboard */,
 			);
 			path = HelloGLKit;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				DE30F861154670C3008DBF63 /* InfoPlist.strings in Resources */,
 				DE9792D21549056200062700 /* README.md in Resources */,
+				DE3B2659154914A000620B23 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
