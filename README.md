@@ -1,5 +1,7 @@
 #Purpose:
 Do iOS GLKit tutorial.
+Note tutorial author prefaced insance variables with underscore _.
+I removed underscore.
 
 #References:
 Ray Wenderlich tutorials for iPhone / iOS Developers and Gamers
