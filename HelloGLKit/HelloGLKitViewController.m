@@ -14,7 +14,7 @@ typedef struct {
 } Vertex;
 
 // array of per-vertex data
-const Vertex Vertices[] = {
+Vertex Vertices[] = {
     {{1, -1, 0}, {1, 0, 0, 1}},
     {{1, 1, 0}, {0, 1, 0, 1}},
     {{-1, 1, 0}, {0, 0, 1, 1}},
@@ -65,7 +65,7 @@ const GLubyte Indices[] = {
     glGenBuffers(1, &vertexBuffer);
     // associate GL_ARRAY_BUFFER with vertexBuffer
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_DYNAMIC_DRAW);
     
     glGenBuffers(1, &indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
@@ -145,19 +145,23 @@ const GLubyte Indices[] = {
 #pragma mark - GLKViewControllerDelegate
 
 - (void)update {
-    if (increasing) {
-        curRed += 1.0 * self.timeSinceLastUpdate;
-    } else {
-        curRed -= 1.0 * self.timeSinceLastUpdate;
-    }
-    if (curRed >= 1.0) {
-        curRed = 1.0;
-        increasing = NO;
-    }
-    if (curRed <= 0.0) {
-        curRed = 0.0;
-        increasing = YES;
-    }
+
+    // move a vertex
+    // http://developer.apple.com/library/ios/#documentation/3DDrawing/Conceptual/OpenGLES_ProgrammingGuide/TechniquesforWorkingwithVertexData/TechniquesforWorkingwithVertexData.html
+    float omega = 32.f;
+    Vertices[0].Position[0] = 1 + 0.2 * sin(omega * self.timeSinceLastResume);
+    Vertices[0].Position[1] = -1 + 0.2 * cos(omega * self.timeSinceLastResume);
+    //NSLog(@"%g", Vertices[0].Position[1]);
+
+    ////////////////
+    // Call glBufferData each update.
+    // Probably inefficient but do it for now to get something working
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_DYNAMIC_DRAW);
+
+    // better to use vertex array object instead??
+    // or call glBufferSubData??
+    //glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, const GLvoid* data);
+    ////////////////
     
     // configure projectionMatrix to project 3D onto 2D
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
@@ -170,7 +174,10 @@ const GLubyte Indices[] = {
     // configure modelViewMatrix with any geometry transformations
     // translate geometry from 0 plane to between near and far plane so that it will be visible
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -6.0f);   
-    rotation += 90 * self.timeSinceLastUpdate;
+    
+    // rotation += 90 * self.timeSinceLastUpdate;
+    rotation = 0;
+    
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1);
     self.effect.transform.modelviewMatrix = modelViewMatrix;
 }
